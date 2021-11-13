@@ -1,0 +1,15 @@
+{
+  "name": "math-toolbox",
+  "version": "1.0.0",
+  "description": "Math toolbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Orr Shalev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

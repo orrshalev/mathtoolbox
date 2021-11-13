@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">    
+    <!-- Custom style sheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <title>Cartesian Product Calculator - Math Toolbox</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Navigation bar & sidebar -->
+    <nav class="navbar navbar-light fixed-top" style="background-color: #29BB89;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #E6DD3B;">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../learn/learn.html">Learn</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Discrete Math & Logic
+                </a>
+                <ul class="dropdown-menu " aria-labelledby="offcanvasNavbarDropdown" style="background-color: #EAE583;">
+                  <li><a class="dropdown-item" href="../tools/recursion.html">Recursion Sandbox</a></li>
+                  <li><a class="dropdown-item" href="../tools/boolean.html">Boolean Algebra</a></li>
+                  <li><a class="dropdown-item" href="../tools/bigo.html">BigO Optimization</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Set Theory
+                </a>
+                <ul class="dropdown-menu " aria-labelledby="offcanvasNavbarDropdown" style="background-color: #EAE583;">
+                  <li><a class="dropdown-item" href="../tools/cartesian.html">Cartesian Product Calculator</a></li>
+                  <li><a class="dropdown-item" href="../tools/power-set.html">Power Set Calculator</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  About
+                </a>
+                <ul class="dropdown-menu " aria-labelledby="offcanvasNavbarDropdown" style="background-color: #EAE583;">
+                  <li><a class="dropdown-item" href="../about/about.html">Website</a></li>
+                  <li><a class="dropdown-item" href="../about/aboutOrr.html">Creator</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="../about/contact.html">Contact</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a class="navbar-brand" href="../index.html">Math Toolbox</a>
+      </div>    
+    </nav>
+    <!-- Intro -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 id="jumbo" class="display-4">Cartesian Product Calculator</h1>
+        <div style="padding-top: 10px;">
+          <p class="lead">This tool will, given at least 2 sets, calculate the Cartesian product of all sets.</p>
+        </div>
+      </div>
+    </div>
+    <!-- White space -->
+    <div style="height: 30px;"></div>
+    <!-- more info & how to use expand -->
+    <div class="container-md">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Learn
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              <p>
+                The Cartesian product × is an operator (just like addition + and multiplication * ) that creates a set of <i>tuples</i>, which are just like sets but where the order matters. The resulting set contains every possible <i>ordered</i> combination of elements within the sets the Cartesian product is being performed on.              
+              </p>
+              <p>
+                Given two sets A and B, the Cartesian product can be represented as A × B. It is important to note that the tuples within the Cartesian product are ordered based on which sets are to the left of the operation and which are to the right of the operation, so in most cases A × B ≠ B × A.
+              </p>
+              <p>
+                A Cartesian product can be calculated for any number of sets. A Cartesian product for sets A, B, C can be represented as A × B × C. Just like in the Cartesian product of two sets, changing the order in which the Cartesian product is applied to the sets will almost always change the Cartesian product.
+              </p>
+              <p>
+                Below are the definitions of the Cartesian product of two sets and the Cartesian product of <i>n</i> sets, respectively, using set-builder notation. If these definitions do not make sense, it is recommended to refer to the articles on <a href="#">set-builder notation</a> and <a href="#">logical symbols</a>.
+              </p>
+              <p>
+                A × B = {(a, b) ∣ a ∈ A ∧ b ∈ B}.
+              </p>
+              <p>
+                A<sub>1</sub> × A<sub>2</sub> × ⋯ × A<sub>n</sub> = {(a<sub>1</sub>, a<sub>2</sub>, … , a<sub>n</sub>) ∣ a<sub>i</sub> ∈ A<sub>i</sub> for i = 1, 2, … , n}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Examples
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <h5>Example 1</h5>
+              <p>
+                When A = {a, b} and B = {1, 2}, A × B = {(a, 1), (a, 2), (b, 1), (b, 2)} 
+              </p>
+              <p>
+                Notice that the overall set A × B was enclosed with {}, and its elements, which are tuples, were enclosed with (). Since A × B is a set, the elements can be moved around, so for example, another way to write A × B is {(a, 1), (b, 1), (a, 2), (b, 2)}. However, since every element in A × B is a tuple, the elements within those tuples cannot be moved around. For example A × B = {(a, 1), (b, 1), (a, 2), (b, 2)} but A × B ≠ {(1, a), (b, 1), (a, 2), (b, 2)} because the order of the elements <b>a</b> and <b>1</b> in the first tuple were switched.
+              </p>
+              <h5>Example 2</h5>
+              <p>
+                When A = {a, b} and B = {1, 2}, B × A = {(1, a), (1, b), (2, a), (2, b)}
+              </p>
+              <p>
+                Notice that A and B are the same from <b>Example 1</b>, but their placement to the left and right of the Cartesian product operation were changed, so the Cartesian product is different.
+              </p>
+              <h5>Example 3</h5>
+              <p>
+                When A = {a, b} and B = {1, 2, 3}, A × B = {(a, 1), (a, 2), (a, 3), (b, 1), (b, 2), (b, 3)} 
+              </p>
+              <p>
+                An interesting property that can be seen above is that the number of tuples in A × B is 6, which is equal to the number of elements in A times the number of elements in B, 2 * 3. Also, each tuple has 2 elements, which is equivalent to the number of sets being used in the operation. Both these properties stay true no matter how many sets are used or how many elements are in each set.
+              </p>
+              <h5>Example 4</h5>
+              <p>
+                When A = {a, b} and B = {1, 2} and C = {x, y}, A × B × C {(a, 1, x), (a, 1, y), (a, 2, x), (a, 2, y), (b, 1, x), (b, 1, y), (b, 2, x), (b, 2, y)}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              How to use
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+              <h5>Summary</h5>
+              <p>
+                2-9 sets can be chosen. A valid input is one that is comma (,) delimited. Please enter elements with either no spaces in between or 1 space at most for correct output.
+              </p>
+              <h5>Examples of valid input</h5>
+              <p>1,2</p>
+              <p>1,2,3</p>
+              <p>1, 2, 3 <-- with single space in between</p>
+              <p>a,b</p>
+              <p>a, b, c, d</p>
+              <h5>Examples of invalid input</h5>
+              <p>1 2 3 <-- not comma delimited, will be interpreted as a single element</p> 
+              <p>1, &nbsp;2, &nbsp;3 <-- two spaces in between, will be interpreted as three elements: "1", " 2", and " 3"</p>
+              <p>{1, 2, 3} <-- no need to put in set brackets!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- White space -->
+    <div style="height: 30px;"></div>
+    <!-- main -->
+    <div class="container-md">
+      <div class="row">
+        <div class="col col-sm-auto">
+          <p>Number of sets:</p> 
+        </div>
+        <div class="col col-auto">
+          <button id="minus" type="button" class="btn btn-danger">-</button>
+        </div>
+        <div class="col col-sm-1">
+          <input class="form-control" type="text" placeholder="# of sets" readonly="readonly" aria-label="setNum">
+        </div>
+        <div class="col col-auto">
+          <button type="button" class="btn btn-success">+</button>
+        </div>
+        <div class="col col-auto">
+          <button type="button" class="btn btn-warning">Submit</button>
+        </div>
+      </div>
+    </div>
+    <!-- White space -->
+    <div style="height: 40px;"></div>
+    <!-- main -->
+    <div class="container-md">
+      <div class="row">
+        <div class="col col-sm-auto">
+          <p>Set 1:</p> 
+        </div>
+        <div class="col col-sm-auto curly-container">
+          <p class="curly">{</p> 
+        </div>
+        <div class="col col-lg-auto">
+        <input class="form-control inputset" type="text" placeholder="Set 1" aria-label="setOne">
+        </div>
+        <div class="col col-lg-auto">
+          <p class="curly">}</p> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-sm-auto">
+          <p>Set 2:</p> 
+        </div>
+        <div class="col col-sm-auto curly-container">
+          <p class="curly">{</p> 
+        </div>
+        <div class="col col-lg-auto">
+        <input class="form-control inputset" type="text" placeholder="Set 2" aria-label="setOne">
+        </div>
+        <div class="col col-lg-auto">
+          <p class="curly">}</p> 
+        </div>
+      </div>
+    </div>
+    <!-- White space -->
+    <div style="height: 20px;"></div>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- script -->
+    <script src="cartesian.js" charset="utf-8"></script>
+  </body>
+</html>

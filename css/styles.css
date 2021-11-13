@@ -1,0 +1,50 @@
+body
+{
+    padding-top: 80px;
+}
+
+h1
+{
+    font-family: 'PT Serif', serif;
+    line-height: 1.5; 
+    font-weight: bold;
+}
+
+h5
+{
+    font-family: 'PT Serif', serif;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+p
+{
+    font-family: 'Nunito', sans-serif;
+}
+
+.curly
+{
+    font-size:x-large;
+}
+
+.curly-container
+{
+    width: 10px;
+}
+
+#jumbo
+{
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+}
+
+#featured
+{
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+#featured-container
+{
+    padding-right: 10%;
+}
